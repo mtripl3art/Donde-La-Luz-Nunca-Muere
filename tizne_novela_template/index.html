@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Novela Gráfica - Tizne</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-top: 20px;
+        }
+        .nav {
+            margin: 20px;
+        }
+        button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Novela Gráfica: Tizne</h1>
+    <div>
+        <img id="comicPage" src="page1.jpg" alt="Página de cómic">
+    </div>
+    <div class="nav">
+        <button onclick="prevPage()">Anterior</button>
+        <button onclick="nextPage()">Siguiente</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 10; // Cambia esto según el número de páginas que tengas
+
+        function updateImage() {
+            document.getElementById("comicPage").src = "page" + currentPage + ".jpg";
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateImage();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updateImage();
+            }
+        }
+    </script>
+</body>
+</html>
